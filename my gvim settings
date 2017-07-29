@@ -1,23 +1,30 @@
 set number
+set relativenumber
 "set expandtab
 set tabstop=4
-
 set guifont=Monospace\ 12
 set linespace=1
 
 set hlsearch
 set incsearch
-
-set syntax on
-set listchars=eol:¬,tab:>·,trail:·,extends:>,precedes:<,space:-
+set encoding=utf-8
+syntax on
+set listchars=eol:¬,trail:·,extends:>,precedes:<,space:-,tab:↓-
 set list!
 set mps+=<:>
 set showmatch
 set confirm
 set title "name of current buffer
 set incsearch " поиск фрагмента по мере его набора
+set smartindent
+set splitright
+set wrap
+set lines=45
+set columns=100
+set filetype=sql
 
-
+let php_sql_query=1
+let php_htmlInStrings=1
 
 colorscheme wwdc16
 "colorscheme molokai
@@ -26,10 +33,8 @@ colorscheme wwdc16
 vmap <F2> "+y
 vmap <F3> "+gP
 imap <F3> "+gP
-set nocp                    " 'compatible' is not set
-filetype plugin on          " plugins are enabled
 
-"machine autoritetparts.com.ua login ftpuser password "pas"
+"machine autoritetparts.com.ua login ftpuser password pas
 
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin('~/.vim/plugged')
@@ -50,3 +55,5 @@ map <C-n> :NERDTreeToggle<CR>
 "snipMate — позволяет быстро вставить в документ текстовый шаблон с помощью ключевого слова
 "vim-airline - добавляет красоты
 "neocomplcache - автокомплит и мног очего ещё
+set nocp                    " 'compatible' is not set
+filetype plugin on          " plugins are enabled
