@@ -1,7 +1,7 @@
 <?php
 $str1='ssdf_adf';
 $str2='';
-
+$resulta='';
 
 function reverse($str1,$str2){
 		$inter='';
