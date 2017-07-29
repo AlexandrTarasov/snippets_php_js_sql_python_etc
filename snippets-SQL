@@ -1,0 +1,2 @@
+UPDATE `product_description` SET `description` = REPLACE(`description`, 'what-to-change', 'replace-to-it') WHERE `description` LIKE '%match%';
+//match can be with spaces like this '% matche%' or '% matche %'
