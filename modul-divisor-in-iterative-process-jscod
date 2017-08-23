@@ -1,0 +1,14 @@
+const smallestDivisor = (num) => {
+  if(num===1) return 1;
+  const iter = (num, divi, modul) => {
+    if (modul === 0) {
+      return divi-1;
+    }
+    return iter(num, divi+1, num % divi);
+  };
+  return iter(num, 2, 1);
+};
+smallestDivisor(15);
+smallestDivisor(22);
+smallestDivisor(9);
+export default smallestDivisor;
