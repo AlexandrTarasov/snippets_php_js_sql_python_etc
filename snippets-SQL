@@ -6,3 +6,7 @@ UPDATE `ap_prod_elit` SET `cat` = '4', `data_change` = '2017-09-03', `deep_cat`=
 
 SET sql_mode='';
 // turn off sql_mode for date
+
+SELECT pd.`products_id`, pd.`products_name`, products.products_status  FROM `products_description` AS pd LEFT JOIN products ON pd.products_id = products.products_id WHERE pd.`products_name` LIKE '%болт %' AND   products.manufacturers_id=31
+
+//select prod by name and monufactures
