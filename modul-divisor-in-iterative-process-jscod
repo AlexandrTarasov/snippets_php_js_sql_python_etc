@@ -29,4 +29,23 @@ export default smallestDivisor;
   };
 
   return iter(2);
-  // END
+// END
+
+// BEGIN
+const smallestDivisor = (acc) => {
+  let counter = 2;
+  if (acc < 1) {return NaN;}
+  if (acc == 1) {return acc;}
+  while (counter <= acc) {  
+    if (acc % counter===0) {
+      return counter;
+    } 
+    else { 
+      counter = counter + 1; 
+    }
+  
+  }
+ 
+};
+smallestDivisor(6);
+ // END
