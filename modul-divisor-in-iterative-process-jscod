@@ -49,3 +49,28 @@ const smallestDivisor = (acc) => {
 };
 smallestDivisor(6);
  // END
+ 
+//begin find plain integer
+const isPrime = (num) => {
+  let result='';
+  if(num<=1){
+  	return false;
+  }
+  else{
+  	for(let counter = 1; counter <= num; counter++){
+       result=num % counter;
+       if(result==0 && counter<num  && counter>1){
+       return false;
+       }             
+    }
+    return true;
+  }
+
+};
+
+isPrime(10);
+// END
+
+
+
+
