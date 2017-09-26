@@ -1,12 +1,18 @@
-UPDATE `product_description` SET `description` = REPLACE(`description`, 'what-to-change', 'replace-to-it') WHERE `description` LIKE '%match%';
 //match can be with spaces like this '% matche%' or '% matche %'
+UPDATE `product_description` SET `description` = REPLACE(`description`, 'what-to-change', 'replace-to-it') WHERE `description` LIKE '%match%';
 
+//update cat prod info
 UPDATE `ap_prod_elit` SET `cat` = '4', `data_change` = '2017-09-03', `deep_cat`= '4', `property` = '2' WHERE `articul` LIKE 'SDM 887802'
-//update can prod info
 
-SET sql_mode='';
 // turn off sql_mode for date
-
-SELECT pd.`products_id`, pd.`products_name`, products.products_status  FROM `products_description` AS pd LEFT JOIN products ON pd.products_id = products.products_id WHERE pd.`products_name` LIKE '%болт %' AND   products.manufacturers_id=31
+SET sql_mode='';
 
 //select prod by name and monufactures
+SELECT pd.`products_id`, pd.`products_name`, products.products_status  FROM `products_description` AS pd LEFT JOIN products ON pd.products_id = products.products_id WHERE pd.`products_name` LIKE '%болт %' AND   products.manufacturers_id=31
+
+
+
+// select prod by name's part
+SELECT products.products_id, products_description.products_name, products.products_sort, products.products_model FROM `products_description` 
+LEFT JOIN products ON products.products_id = products_description.products_id 
+WHERE `products_name` LIKE '%кронштейн%' AND  `products_status`='1' 
