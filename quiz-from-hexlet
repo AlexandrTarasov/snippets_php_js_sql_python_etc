@@ -1,0 +1,27 @@
+<script>
+const toUpperCase = str => str.toUpperCase();
+
+var answer1 = "Isd sdfA";
+var answer2 = " ";
+var answer3 = 'He is called "Johnny"'; 
+
+const bigLettersCount = (str) => {
+  // BEGIN (write your solution here)
+  var i = 0;
+  var upornot = 0;
+  var counter = 0;
+  while (i < str.length) {
+    upornot = toUpperCase(str[i]) === str[i];
+    if(upornot)
+    {
+      counter = counter +1;  
+    }
+    i = i + 1;
+  }
+  return counter
+  // END
+};
+
+console.log(bigLettersCount(answer1));
+
+</script>
