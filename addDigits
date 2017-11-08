@@ -1,0 +1,38 @@
+const addDigits = (num) => {
+
+  var i = 0;
+  var sum = 0;
+  num=String(num); 
+  
+  if (num.length===1){console.log(num); return Number(num);}
+  
+  while (i < num.length-1) {
+    if(i===0){
+        sum = sumDigits(num[i],num[i+1]);
+    }
+    else{
+        sum = sumDigits(sum,num[i+1]);
+    }
+
+    i = i + 1;
+    console.log('while');
+  }
+  
+  sum = String(sum);
+  if(sum.length>1){
+      sum = addDigits(sum);
+      console.log('recursion');
+  }
+  
+  console.log(sum);
+  return Number(sum);
+  
+};
+
+const sumDigits = (slogan1, slogan2) => {
+    var sum = 0;
+    sum = Number(slogan1) + Number(slogan2);
+    return sum;
+    
+};
+addDigits(10);
