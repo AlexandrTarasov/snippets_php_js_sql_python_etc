@@ -1,0 +1,26 @@
+const length = str => str.length;
+const toUpperCase = str => str.toUpperCase();
+
+const solution = (str) => {
+    
+  var i = 0;
+  var backstr = '';
+  
+  while(i < length(str)){
+    
+    if(i===0 && str[0] != ' '){
+        backstr += toUpperCase(str[0]);    
+    }else if(str[i-1] === ' '){
+        backstr += toUpperCase(str[i]);
+    }else{
+        backstr += str[i];
+    }
+    //console.log(backstr);
+    i = i+1;
+    
+  }
+ 
+  return backstr;
+};
+
+solution('  hello,   world!');
