@@ -19,4 +19,4 @@ WHERE `products_name` LIKE '%кронштейн%' AND  `products_status`='1'
 
 
 // select unique value and his minimum id
-SELECT `model`, MIN(`id`) FROM `auto_cat` WHERE `mark` LIKE 'HYUNDAI' GROUP BY `model` HAVING count(*)>1
+SELECT `model`, MIN(`id`) FROM `auto_cat` WHERE `mark` LIKE 'HYUNDAI' GROUP BY `model` HAVING count(*)>=1
