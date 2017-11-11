@@ -4,7 +4,7 @@ UPDATE `product_description` SET `description` = REPLACE(`description`, 'what-to
 //update cat prod info
 UPDATE `ap_prod_elit` SET `cat` = '4', `data_change` = '2017-09-03', `deep_cat`= '4', `property` = '2' WHERE `articul` LIKE 'SDM 887802'
 
-// turn off sql_mode for date
+//turn off sql_mode for date
 SET sql_mode='';
 
 //select prod by name and monufactures
@@ -16,3 +16,7 @@ SELECT pd.`products_id`, pd.`products_name`, products.products_status  FROM `pro
 SELECT products.products_id, products_description.products_name, products.products_sort, products.products_model FROM `products_description` 
 LEFT JOIN products ON products.products_id = products_description.products_id 
 WHERE `products_name` LIKE '%кронштейн%' AND  `products_status`='1' 
+
+
+// select unique value and his minimum id
+SELECT `model`, MIN(`id`) FROM `auto_cat` WHERE `mark` LIKE 'HYUNDAI' GROUP BY `model` HAVING count(*)>1
