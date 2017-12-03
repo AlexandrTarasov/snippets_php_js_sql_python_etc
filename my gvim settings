@@ -38,7 +38,6 @@ vmap <F2> "+y
 vmap <F3> "+gP
 imap <F3> "+gP
 
-"machine autoritetparts.com.ua login ftpuser password pas
 
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin('~/.vim/plugged')
