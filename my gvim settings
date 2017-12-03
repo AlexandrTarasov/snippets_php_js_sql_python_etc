@@ -23,6 +23,10 @@ set lines=45
 set columns=100
 set filetype=sql
 
+
+
+au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+
 let php_sql_query=1
 let php_htmlInStrings=1
 
@@ -42,7 +46,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tomtom/tcomment_vim'
 Plug 'jiangmiao/auto-pairs'
 
-
+Plug 'jelera/vim-javascript-syntax'
 
 " Initialize plugin system
 call plug#end()
@@ -57,3 +61,4 @@ map <C-n> :NERDTreeToggle<CR>
 "neocomplcache - автокомплит и мног очего ещё
 set nocp                    " 'compatible' is not set
 filetype plugin on          " plugins are enabled
+
