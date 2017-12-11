@@ -1,7 +1,7 @@
 <?php
 $model = $name = $phone = $mail = $form3 = '';
 if(isset($_POST['model'])){$model = test_input($_POST['model']);}
-echo $name  = test_input($_POST['name']);
+$name  = test_input($_POST['name']);
 $phone = test_input($_POST['phone']);
 $email = test_input($_POST['email']);
 $form3 = test_input($_POST['form3dickaunt']);
