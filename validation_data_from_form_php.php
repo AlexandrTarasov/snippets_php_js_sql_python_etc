@@ -8,9 +8,9 @@ $form3 = test_input($_POST['form3dickaunt']);
 
 $error = 0;
 
-if (!preg_match("/^[а-яА-ЯёЁ ]{2,25}$/",$name)) {
-  echo ("Введите имя русскими буквами");
-  $error=1;
+if (!preg_match('/^[а-яА-ЯёЁ ]{2,20}$/ui', $name)) {
+  echo ("<center><h3>Введите имя русскими буквами</h3></center>");
+  $error = 1;
 }
 
 if(!preg_match("/^[0-9 -]{7,16}+$/", $phone)){
