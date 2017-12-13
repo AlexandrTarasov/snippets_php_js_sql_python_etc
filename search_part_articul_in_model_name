@@ -1,0 +1,15 @@
+?>
+$set = array();
+$set[0]="976061E300";
+$set[1]="252212A200";
+$set[2]="2522126001";
+
+
+echo"<table>";
+	for($i=0;$i<3;$i++){
+		$query_articul = mysql_query("SELECT DISTINCT product_id  FROM product  WHERE model LIKE '%".$set[$i]."%' ");
+		$res=mysql_fetch_array($query_articul);
+	echo"<tr><td>"; print($res['product_id']); echo"</td><td>"; print($set[$i]); echo"</td></tr>";
+}
+echo"</table>";
+?>
