@@ -25,3 +25,10 @@ const bigLettersCount = (str) => {
 console.log(bigLettersCount(answer1));
 
 </script>
+<?php
+function fib($num)
+{
+    if($num==0){return 0;}
+    if($num==1){return 1;}
+    return fib($num-1) + fib($num-2);
+}
