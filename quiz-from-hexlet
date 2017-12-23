@@ -60,3 +60,17 @@ function factorial($num) // Tail recursion
     };
     return $powIter ($num, 1);
 }
+
+//Smallest Divisor func
+function smallestDivisor($num)
+{   
+    if($num==1)return $num;
+    $modul=1;
+    
+    $powIter = function ($num, $acc, $modul) use (&$powIter) {
+        if ($modul == 0) { return $acc - 1; }
+        return $powIter ($num, $acc + 1, $num % $acc);
+    };
+    return $powIter ($num, 2, $modul);
+    // END
+}
