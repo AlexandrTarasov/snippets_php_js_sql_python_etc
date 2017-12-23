@@ -74,3 +74,20 @@ function smallestDivisor($num)
     return $powIter ($num, 2, $modul);
     // END
 }
+
+
+function wordsCount($sentence){
+    if(empty($sentence)){
+        return;
+    }
+    $new_arr = [];
+    $arr = explode(' ', $sentence);
+    foreach($arr as $value){
+        if( (!array_key_exists($value, $new_arr)) && (!empty($value)) ){
+           $new_arr[$value] = 1;         
+        }elseif(!empty($value)){
+            $new_arr[$value] += 1;
+        }    
+    }
+    return $new_arr;
+}
