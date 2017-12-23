@@ -51,3 +51,12 @@ function uniq(array $arr)
     }
     return $result;
 }
+
+function factorial($num) // Tail recursion
+{
+    $powIter = function ($num, $acc) use (&$powIter) {
+        if ($num == 0) { return $acc; }
+        return $powIter ($num - 1, $acc * $num);
+    };
+    return $powIter ($num, 1);
+}
