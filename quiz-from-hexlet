@@ -105,3 +105,17 @@ function multiArgs(...$arg){
     }
     var_dump( $result);
 }
+
+
+use function Functional\map;
+
+///powerOfString()
+function powerOfString($str)
+{
+    $out = str_split($str);
+    $result = map($out, function($info){
+        return ord($info);
+    });
+    return array_sum($result);
+
+}
