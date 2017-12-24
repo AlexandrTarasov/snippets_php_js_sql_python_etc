@@ -131,3 +131,11 @@ function compact(array $array)
    
     var_dump($array);
 }
+
+//sum() 
+function sum($start, $finish, $func)
+{
+    if ($start > $finish){return 0;}
+    return $func($start)+ sum($start+1,  $finish, $func); 
+}
+echo sum(1, 3, function($x){return $x;});
