@@ -91,3 +91,17 @@ function wordsCount($sentence){
     }
     return $new_arr;
 }
+
+function multiArgs(...$arg){
+    if($arg==null){
+        return null;
+    }
+    $result = $arg[0];
+    foreach($arg as $key => $val){
+        if($key>0){
+            $result *= $val; 
+        }
+
+    }
+    var_dump( $result);
+}
