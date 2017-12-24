@@ -119,3 +119,15 @@ function powerOfString($str)
     return array_sum($result);
 
 }
+
+
+function compact(array $array)
+{
+    foreach($array as $kay => $val){
+       if($val===null){
+           unset($array[$kay]);
+       }
+    }
+   
+    var_dump($array);
+}
