@@ -146,3 +146,21 @@ function product($num1, $num2, $func)
     if ($num1 == $num2){return $num2;} 
     return $func(product($num1, $num2-1, $func), $num2); 
 }
+
+function addDigits($str){
+   
+   $out = str_split($str);
+   $max = count($out);
+    $res=0;
+
+   for($i=0; $i < $max; $i++){
+        $res += $out[$i]; 
+        $out2 = str_split($res);
+        if( count($out2)>1 )
+        {
+           $res = $out2[0]+$out2[1]; ;
+        }
+        else{ }
+   }
+   return $res; 
+}
