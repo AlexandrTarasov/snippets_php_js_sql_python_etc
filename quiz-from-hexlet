@@ -178,3 +178,16 @@ function evenSquareSum($array)
 
     return array_sum($squaredNumbers);
 }
+
+
+function factor($multiplier)
+{
+    // BEGIN (write your solution here)
+    return function ($number) use ($multiplier) {
+        return $number * $multiplier; 
+    };
+    // END
+}
+$func = factor(3);
+$func(2);
+
