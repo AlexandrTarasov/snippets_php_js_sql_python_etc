@@ -191,3 +191,19 @@ function factor($multiplier)
 $func = factor(3);
 $func(2);
 
+
+function wordsCount($arr){
+    $result = reduce_left($arr, function($item, $index, $collection, $acc){
+        
+        if(array_key_exists($item, $acc)){
+            $acc[$item]++;
+        }
+        else{
+            $acc[$item]=1;
+        }
+        return $acc;
+        
+    },[]);
+
+    return $result;
+}
