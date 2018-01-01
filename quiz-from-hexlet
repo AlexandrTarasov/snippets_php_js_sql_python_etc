@@ -207,3 +207,11 @@ function wordsCount($arr){
 
     return $result;
 }
+
+
+function length($items)
+{    
+    if($items == null) return 0;
+    if(cdr($items) == null){return 1;} 
+    return 1 + length(cdr($items));
+}
