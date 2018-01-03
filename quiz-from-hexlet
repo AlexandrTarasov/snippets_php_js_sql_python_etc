@@ -215,3 +215,25 @@ function length($items)
     if(cdr($items) == null){return 1;} 
     return 1 + length(cdr($items));
 }
+/// OOP
+
+function addToCart(Cart $cart, Item $item)
+{
+  // BEGIN (write your solution here)
+  $cart->items[$item->name] = $item->price;
+  // END
+}
+
+function getCount(Cart $cart)
+{
+  // BEGIN (write your solution here)
+  return count($cart->items);
+  // END
+}
+
+function getTotal(Cart $cart)
+{
+  // BEGIN (write your solution here)
+  return array_sum($cart->items);
+  // END
+}
