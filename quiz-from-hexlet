@@ -254,3 +254,12 @@ function filter($func, $list)
     };
     return reverse($lambda($list, (null)));
 }
+
+function mapWithPower($arr, $deg){
+    
+    $result = array_map(function ($item) use ($deg){
+	    return pow($item, $deg) ;
+    }, $arr);
+    return $result;
+
+}
