@@ -237,3 +237,20 @@ function getTotal(Cart $cart)
   return array_sum($cart->items);
   // END
 }
+
+function filter($func, $list)
+{   
+    if($list === null)return;
+    $lambda = function($list, $acc) use (&$lambda, $func){
+
+        if(cdr($list) === null) {
+            if ($func(car($list))){ return cons(car($list), $acc); }
+            else{return $acc;}          
+        } 
+
+        $newList = $func(car($list)) ? $lambda(cdr($list), cons(car($list), $acc)) : $lambda(cdr($list), $acc);
+        return $newList;
+
+    };
+    return reverse($lambda($list, (null)));
+}
