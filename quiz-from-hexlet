@@ -263,3 +263,10 @@ function mapWithPower($arr, $deg){
     return $result;
 
 }
+
+function separateEvenAndOddNumbers($numbers)
+{
+    return partition($numbers, function ($num) {
+        return $num % 2 == 0;
+    });
+}
