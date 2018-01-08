@@ -270,3 +270,20 @@ function separateEvenAndOddNumbers($numbers)
         return $num % 2 == 0;
     });
 }
+function rrmdir($dir)
+{    
+    // BEGIN (write your solution here)
+    if(is_file($dir)){unlink($dir);}
+    else{
+        $arr = scandir($dir);      
+        foreach($arr as $var){
+            if($var=='.' || $var=='..'){}
+            else{ 
+                rrmdir($dir."/".$var);
+            }
+            rmdir($dir);
+        }
+    }
+    
+    // END
+}
