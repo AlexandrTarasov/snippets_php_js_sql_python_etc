@@ -287,3 +287,17 @@ function rrmdir($dir)
     
     // END
 }
+function grep($string, $path)
+{   $newarr = [];
+    foreach (glob($path) as $filename) {
+        $lines = file($filename);
+        foreach($lines as $line){
+            $pos = strpos($line, $string);
+            if ($pos !== false) {
+                
+                $newarr[]= $line;
+            }
+        }
+    }
+   return $newarr;
+}
