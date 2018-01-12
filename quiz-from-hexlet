@@ -304,7 +304,7 @@ function grep($string, $path)
 
 function reverse($l)
 {
-    // BEGIN (write your solution here)
+ 
      $iter = function ($items, $acc) use (&$iter) {
          
         if ($items === null) {
@@ -326,8 +326,17 @@ function reverse($l)
         }
     };
     return $iter($l, null);
-    // END
+  
 }
 $l =  l(1, l(3, 2), 5, l(6, l(7, 4)));
 listToString(reverse($l));
 
+
+function newWithdraw($sum)
+{
+    return function ($withdraw) use (&$sum){
+        if($withdraw > $sum){return 'too much';}
+        
+        return $sum -= $withdraw;
+    };
+}
