@@ -340,3 +340,29 @@ function newWithdraw($sum)
         return $sum -= $withdraw;
     };
 }
+
+
+function random ($seed)
+{   $firstSeed = $seed;
+    return function() use (&$seed, &$firstSeed){
+        if(func_num_args()){
+            $numarg = func_get_arg(0);
+            if ($numarg == "reset") {
+                $seed = $firstSeed; 
+                return $seed;
+            }
+        }
+
+        $a = 45;
+        $c = 21;
+        $m = 67;
+        $seed = ($a *$seed + $c) % $m;
+
+        return $seed;
+    };  
+}
+//$seq = random(3);
+//echo $result = $seq(); echo PHP_EOL;
+//$seq(); echo PHP_EOL;
+//$seq("reset"); echo PHP_EOL;
+//echo $seq(); echo PHP_EOL;
