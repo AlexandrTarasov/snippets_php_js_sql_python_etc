@@ -10,7 +10,7 @@ set incsearch
 set encoding=utf-8
 syntax on
 "color dracula
-set listchars=eol:¬,trail:·,extends:>,precedes:<,space: ,tab:↓-
+set listchars=eol:¬,trail:·,extends:>,precedes:<,space:-,tab:↓-
 set list!
 set mps+=<:>
 set showmatch
