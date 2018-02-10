@@ -9,7 +9,8 @@ set hlsearch
 set incsearch
 set encoding=utf-8
 syntax on
-set listchars=eol:¬,trail:·,extends:>,precedes:<,space:-,tab:↓-
+"color dracula
+set listchars=eol:¬,trail:·,extends:>,precedes:<,space: ,tab:↓-
 set list!
 set mps+=<:>
 set showmatch
@@ -21,11 +22,27 @@ set splitright
 set wrap
 set lines=45
 set columns=100
-set filetype=sql
+set filetype=php
+set laststatus=2
+set statusline=> %f%m%r%h%w [%{&ff}] [A%03.3b] [H%02.2B] %=[%04l,%04v] [%p%%] [%L]
+"set statusline=
+"set statusline+=%#todo#  
+"set statusline+=♦ 
+"set statusline+=%1*\ %n\ %*            "buffer number
+"set statusline+=%#PmenuSel#
+"set statusline+=%#LineNr#
+"set statusline+=\ %f
+"set statusline+=%m\
+"set statusline+=%=
+"set statusline+=%#CursorColumn#
+"set statusline+=\ %y
+"set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+"set statusline+=\[%{&fileformat}\]
+"set statusline+=♦ 
+"set statusline+=\ %p%%
+"set statusline+=\ %l:%c
+"set statusline+=\ 
 
-
-
-au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 let php_sql_query=1
 let php_htmlInStrings=1
@@ -36,8 +53,9 @@ colorscheme wwdc16
 "mapping
 vmap <F2> "+y
 vmap <F3> "+gP
-imap <F3> "+gP
-
+imap <F3> <C-c>"+gP
+nmap <F3> "+gP
+"machine autoritetparts.com.ua login ftpuser password pas
 
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin('~/.vim/plugged')
@@ -46,6 +64,8 @@ Plug 'tomtom/tcomment_vim'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'jelera/vim-javascript-syntax'
+Plug 'dracula/vim'
+
 
 " Initialize plugin system
 call plug#end()
@@ -55,9 +75,9 @@ call plug#end()
 
 
 map <C-n> :NERDTreeToggle<CR>
+map <F6> :setlocal spell; spelllang=en_us<CR>
 "snipMate — позволяет быстро вставить в документ текстовый шаблон с помощью ключевого слова
 "vim-airline - добавляет красоты
 "neocomplcache - автокомплит и мног очего ещё
 set nocp                    " 'compatible' is not set
 filetype plugin on          " plugins are enabled
-
