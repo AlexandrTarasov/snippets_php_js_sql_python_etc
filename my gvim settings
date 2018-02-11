@@ -11,7 +11,7 @@ set encoding=utf-8
 syntax on
 "color dracula
 set listchars=eol:¬,trail:·,extends:>,precedes:<,space:-,tab:↓-
-set list!
+set list! "show unprintable simbols eol and other
 set mps+=<:>
 set showmatch
 set confirm
@@ -24,7 +24,7 @@ set lines=45
 set columns=100
 set filetype=php
 set laststatus=2
-set statusline=%f%m%r%h%w\ %y\ enc:%{&enc}\ ff:%{&ff}\ fenc:%{&fenc}%=(ch:%3b\ hex:%2B)\ col:%2c\ line:%2l/%L\ [%2p%%]
+set statusline=%f%m%r%h%w\ %y\ enc:%{&enc}\ [:%{&ff}]\ fenc:%{&fenc}%=(ch:%3b\ hex:%2B)\ col:%2c\ line:%2l/%L\ [%2p%%]
 "set statusline=> %f%m%r%h%w [%{&ff}] [A%03.3b] [H%02.2B] %=[%04l,%04v] [%p%%] [%L]
 "set statusline=
 "set statusline+=%#todo#  
@@ -43,21 +43,25 @@ set statusline=%f%m%r%h%w\ %y\ enc:%{&enc}\ ff:%{&ff}\ fenc:%{&fenc}%=(ch:%3b\ h
 "set statusline+=\ %p%%
 "set statusline+=\ %l:%c
 "set statusline+=\ 
-
-
+    
+                        
 let php_sql_query=1
 let php_htmlInStrings=1
 
 colorscheme wwdc16
-hi Normal ctermbg=NONE
+hi Normal ctermbg=NONE  "no background  in  the terminal vim
 "colorscheme molokai
 "colorscheme desert
-"mapping
+
+"mapping"
+
 vmap <F2> "+y
 vmap <F3> "+gP
 imap <F3> <C-c>"+gP
 nmap <F3> "+gP
 nmap ev :tabedit $MYVIMRC <CR>
+nmap ed :w <CR> :bd <CR> :source $MYVIMRC <CR> 
+
 "machine autoritetparts.com.ua login ftpuser password pas
 
 
