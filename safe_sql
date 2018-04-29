@@ -3,6 +3,7 @@ $id =($_GET['id']) ? $mysqli->real_escape_string(trim($_GET['id'])) : '';
 $resultSelect = $mysqli->prepare("INSERT INFO `categories` VALUES(NULL, ?, ?)");
 $resultSelect->bind_param("si", $name, $alias); //s - str, i - int
 $resultSelect->execute();
-$resultSelect = $resultSelect->get_result();
-$row = $resultSelect->fetch_assoc();
-var_dump($row);
+//if SELECT request uncomment below code.
+//$resultSelect = $resultSelect->get_result();
+//$row = $resultSelect->fetch_assoc();
+//var_dump($row);
