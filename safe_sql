@@ -1,0 +1,8 @@
+<?
+$id =($_GET['id']) ? $mysqli->real_escape_string(trim($_GET['id'])) : '';
+$resultSelect = $mysqli->prepare("SELECT * FROM `articles` WHERE `id` = ?");
+$resultSelect->bind_param("s", $id);
+$resultSelect->execute();
+$resultSelect = $resultSelect->get_result();
+$row = $resultSelect->fetch_assoc();
+var_dump();
