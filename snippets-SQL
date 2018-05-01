@@ -20,3 +20,25 @@ WHERE `products_name` LIKE '%кронштейн%' AND  `products_status`='1'
 
 // select unique value and his minimum id
 SELECT `model`, MIN(`id`) FROM `auto_cat` WHERE `mark` LIKE 'HYUNDAI' GROUP BY `model` HAVING count(*)>=1
+
+
+// add PDO using
+try{
+  $pdo = new PDO('mysql:host=localhost;dbname=;charset=utf8','root','pass');
+  $pdo ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  $sql = "SELECT * FROM sdf ";
+  $result = $pdo->query($sql);
+
+  foreach($result as $row){
+    echo '<p>'.$row['id']." | ".$row['name'];
+  }
+
+  while($row = $result->fetch(PDO::FETCH_ASSOC)){ // FETCH_NUM $row['0'] or $row['1'] ect // FETCH_OBJ $row->username ect
+    echo '<p>'.$row['id']." | ".$row['name'];
+  }
+
+}
+catch(PDOException $e){
+	echo $e->getMessage();
+}
