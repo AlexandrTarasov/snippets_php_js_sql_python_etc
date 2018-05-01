@@ -22,7 +22,7 @@ WHERE `products_name` LIKE '%кронштейн%' AND  `products_status`='1'
 SELECT `model`, MIN(`id`) FROM `auto_cat` WHERE `mark` LIKE 'HYUNDAI' GROUP BY `model` HAVING count(*)>=1
 
 
-// add PDO using
+// add PDO using method select
 try{
   $pdo = new PDO('mysql:host=localhost;dbname=;charset=utf8','root','pass');
   $pdo ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -37,6 +37,11 @@ try{
   while($row = $result->fetch(PDO::FETCH_ASSOC)){ // FETCH_NUM $row['0'] or $row['1'] ect // FETCH_OBJ $row->username ect
     echo '<p>'.$row['id']." | ".$row['name'];
   }
+  
+  ///if you neet to add data to db
+  $sql ="INSERT INTO `table` (`user`,`pass`) VALUES('username', 'passnew')";
+  $affacted_rows = $pdo->exec($sql); // metod exec will add data and return the number of affacted rows;
+  
 
 }
 catch(PDOException $e){
