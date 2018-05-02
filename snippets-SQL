@@ -10,7 +10,8 @@ SET sql_mode='';
 //select prod by name and monufactures
 SELECT pd.`products_id`, pd.`products_name`, products.products_status  FROM `products_description` AS pd LEFT JOIN products ON pd.products_id = products.products_id WHERE pd.`products_name` LIKE '%болт %' AND   products.manufacturers_id=31
 
-
+// update the product status depending on name of product
+UPDATE `products` AS p INNER JOIN `products_description` AS pd ON `pd`.`products_id`=`p`.`products_id` SET `p`.`products_status`=0 WHERE `pd`.`products_name` = 'Толкатель клапана'
 
 // select prod by name's part
 SELECT products.products_id, products_description.products_name, products.products_sort, products.products_model FROM `products_description` 
