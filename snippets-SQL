@@ -18,18 +18,22 @@ SELECT products.products_id, products_description.products_name, products.produc
 LEFT JOIN products ON products.products_id = products_description.products_id 
 WHERE `products_name` LIKE '%кронштейн%' AND  `products_status`='1' 
 
-// ----- select all ids wich arn't in another
+// ----- select all ids of one table wich arn't in another table
 SELECT  `products_id` FROM  `products` WHERE  `products`.`products_id` NOT IN (SELECT products_id  FROM products_to_categories)
-// ----- 
- UPDATE products_description SET products_name = REGEXP_REPLACE(products_name, ' T11-[0-9a-zA-Z-]+$', '')  WHERE  `products_name` LIKE '% T11-%';
 
-// -----
+// ----- replase with a regular expression
+UPDATE products_description SET products_name = REGEXP_REPLACE(products_name, ' T11-[0-9a-zA-Z-]+$', '')  WHERE  `products_name` LIKE '% T11-%';
+
+// ----- trimming of all strings which ids are gt 5000
 UPDATE products_description SET products_name = TRIM(products_name) WHERE `products_id` >= 5000
 
-// UPDATE products_description SET products_keywords = CONCAT( products_keywords,  'Geele' ) WHERE  `products_id` =9621
+// ----- adding string to the cell.
+// UPDATE products_description SET products_keywords = CONCAT( products_keywords,  'AUDI' ) WHERE  `products_id` =9621
 
 // select unique value and his minimum id
 SELECT `model`, MIN(`id`) FROM `auto_cat` WHERE `mark` LIKE 'HYUNDAI' GROUP BY `model` HAVING count(*)>=1
+
+
 
 
 // add PDO using method select
