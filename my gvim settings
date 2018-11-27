@@ -2,7 +2,7 @@ set number
 set relativenumber
 "set expandtab
 set tabstop=4
-set guifont=Monospace\ 24
+set guifont=Monospace\ 16px
 set linespace=1
 filetype plugin on          " plugins are enabled
 set hlsearch
@@ -25,7 +25,9 @@ set wrap
 set linebreak
 set cursorcolumn
 set omnifunc=htmlcomplete#CompleteTags
-"set dir=~/tmp
+set omnifunc=phpcomplete#CompletePHP
+set dictionary+=/usr/share/dict/func
+set dir=~/tmp
 let g:netrw_altv          = 1
 let g:netrw_fastbrowse    = 2
 let g:netrw_keepdir       = 0
@@ -33,7 +35,11 @@ let g:netrw_liststyle     = 3
 let g:netrw_retmap        = 1
 let g:netrw_silent        = 1
 let g:netrw_special_syntax= 1
-let g:netrw_winsize = 75
+" let g:netrw_sort_direction=reverse
+let g:netrw_winsize = 25
+let g:netrw_ftp_cmd="ftp -p"
+let g:closetag_html_style=1
+let g:netrw_localrmdir='rm -r'
 "if version >= 703
 "if exists('+colorcolumn')
 "  set colorcolumn=80
@@ -77,16 +83,16 @@ set statusline+=%m      "modified flag
 set statusline+=%r      "read only flag
 
 " Puts in the current git status
-if count(g:pathogen_disabled, 'Fugitive') < 1
-	set statusline+=%{fugitive#statusline()}
-endif
-
-" Puts in syntastic warnings
-if count(g:pathogen_disabled, 'Syntastic') < 1  
-        set statusline+=%#warningmsg#
-        set statusline+=%{SyntasticStatuslineFlag()}
-        set statusline+=%*
-endif
+" if count(g:pathogen_disabled, 'Fugitive') < 1
+" 	set statusline+=%{fugitive#statusline()}
+" endif
+"
+" " Puts in syntastic warnings
+" if count(g:pathogen_disabled, 'Syntastic') < 1  
+"         set statusline+=%#warningmsg#
+"         set statusline+=%{SyntasticStatuslineFlag()}
+"         set statusline+=%*
+" endif
 
 set statusline+=\ %=                        " align left
 set statusline+=Line:%l/%L[%p%%]            " line X of Y [percent of file]
@@ -100,9 +106,10 @@ let php_htmlInStrings=1
 
 colorscheme wwdc16
 "color dracula
-hi Normal ctermbg=NONE  "no background  in  the terminal vim
+hi Normal ctermbg=black  "no background  in  the terminal vim
 "colorscheme molokai
 "colorscheme desert
+hi Comment guifg=gray30 
 
 "mapping
 
@@ -117,10 +124,19 @@ nmap <Leader>1 <C-w>l<S-z><S-z>:vertical res 120% <CR>
 "nmap <Leader>1 :vertical res 100% <CR> <C-w>l :q <CR>
 nmap <Leader>. 15<C-w>>
 nmap <Leader>, 15<C-w><
+nmap <Leader>[ :set co-=15<CR>
+nmap <Leader>] :set co+=15<CR>
 imap ;; <Esc>
 vmap ;; <Esc>
 vmap <F12> <C-c>j<S-v>zz 
+imap <leader>w (<Esc>lxea);
+imap <leader>; <Esc><S-a>;<Esc>
+imap <leader>c <Esc>yi<<S-$>a</<Esc>pa><Esc><C-%>i<CR><Tab><CR><Esc>k
+"add the same close tab
+
+
 "machine autoritetparts.com.ua login ftpuser password pas
+"
 
 
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
@@ -146,17 +162,17 @@ map <C-n> :NERDTreeToggle<CR>
 map <F6> :setlocal spell! spelllang=en_us<CR>
 "inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType html inoremap ;1 <h1></h1><Enter><Enter><++><Esc>2kf<i
-autocmd FileType html inoremap ;2 <h2></h2><Enter><Enter><++><Esc>2kf<i
-autocmd FileType html inoremap ;3 <h3></h3><Enter><Enter><++><Esc>2kf<i
+" autocmd FileType html inoremap ;1 <h1></h1><Enter><Enter><++><Esc>2kf<i
+" autocmd FileType html inoremap ;2 <h2></h2><Enter><Enter><++><Esc>2kf<i
+" autocmd FileType html inoremap ;3 <h3></h3><Enter><Enter><++><Esc>2kf<i
 autocmd FileType html,php inoremap ;d <div<Space>class=""></div><Enter><Enter><++><Esc>2kf<i
-autocmd FileType html,php inoremap ;p <p></p><Enter><Enter><++><Esc>02kf>a
-autocmd FileType html,php inoremap ;a <a<Space>href=""><++></a><Space><++><Esc>F"i
-autocmd FileType html,php inoremap ;ul <ul><Enter><li></li><Enter></ul><Enter><Enter><++><Esc>03kf<i
-autocmd FileType html,php inoremap ;li <Esc>o<li></li><Esc>F>a
+" autocmd FileType html,php inoremap ;p <p></p><Enter><Enter><++><Esc>02kf>a
+" autocmd FileType html,php inoremap ;a <a<Space>href=""><++></a><Space><++><Esc>F"i
+" autocmd FileType html,php inoremap ;ul <ul><Enter><li></li><Enter></ul><Enter><Enter><++><Esc>03kf<i
+" autocmd FileType html,php inoremap ;li <Esc>o<li></li><Esc>F>a
+autocmd FileType html,php inoremap <Leader>' echo"</br>";
 
 "snipMate — позволяет быстро вставить в документ текстовый шаблон с помощью ключевого слова
 "vim-airline - добавляет красоты
 "neocomplcache - автокомплит и мног очего ещё
 set nocp                    " 'compatible' is not set
-
