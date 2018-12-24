@@ -23,6 +23,7 @@ set shiftwidth=4
 set autoindent 
 set wrap
 set linebreak
+set foldmethod=syntax
 set cursorcolumn
 set omnifunc=htmlcomplete#CompleteTags
 set omnifunc=phpcomplete#CompletePHP
@@ -35,11 +36,17 @@ let g:netrw_liststyle     = 3
 let g:netrw_retmap        = 1
 let g:netrw_silent        = 1
 let g:netrw_special_syntax= 1
+let g:netrw_browse_split = 20
 " let g:netrw_sort_direction=reverse
-let g:netrw_winsize = 25
+" let g:netrw_winsize = 25
 let g:netrw_ftp_cmd="ftp -p"
 let g:closetag_html_style=1
 let g:netrw_localrmdir='rm -r'
+autocmd VimEnter * source .vim/gp-service.vim 
+" augroup ProjectDrawer
+"   autocmd!
+"   autocmd VimEnter * :Vexplore
+" augroup END
 "if version >= 703
 "if exists('+colorcolumn')
 "  set colorcolumn=80
@@ -47,7 +54,7 @@ let g:netrw_localrmdir='rm -r'
 if has("gui_running")
   " GUI is running or is about to start.
   " Maximize gvim window.
-  set lines=999 columns=999
+  set lines=60 columns=140
 endif
 
 set lines=80
@@ -81,7 +88,11 @@ set statusline+=%y      "filetype
 set statusline+=%h      "help file flag
 set statusline+=%m      "modified flag
 set statusline+=%r      "read only flag
-
+set statusline+=\ %=                        " align left
+set statusline+=Line:%l/%L[%p%%]            " line X of Y [percent of file]
+set statusline+=\ Col:%c                    " current column
+set statusline+=\ Buf:%n                    " Buffer number
+set statusline+=\ [%b][0x%B]\               " ASCII and byte code under cursor    
 " Puts in the current git status
 " if count(g:pathogen_disabled, 'Fugitive') < 1
 " 	set statusline+=%{fugitive#statusline()}
@@ -94,11 +105,6 @@ set statusline+=%r      "read only flag
 "         set statusline+=%*
 " endif
 
-set statusline+=\ %=                        " align left
-set statusline+=Line:%l/%L[%p%%]            " line X of Y [percent of file]
-set statusline+=\ Col:%c                    " current column
-set statusline+=\ Buf:%n                    " Buffer number
-set statusline+=\ [%b][0x%B]\               " ASCII and byte code under cursor    
 
                         
 let php_sql_query=1
@@ -123,17 +129,32 @@ nmap <Leader>n :Vex <CR> :vertical res 30 <CR>
 nmap <Leader>1 <C-w>l<S-z><S-z>:vertical res 120% <CR>
 "nmap <Leader>1 :vertical res 100% <CR> <C-w>l :q <CR>
 nmap <Leader>. 15<C-w>>
+nmap <Leader>.. 55<C-w>>
 nmap <Leader>, 15<C-w><
 nmap <Leader>[ :set co-=15<CR>
 nmap <Leader>] :set co+=15<CR>
+imap <Leader>ec <Esc><S-a>echo"</br>";<Esc>
+nmap <Leader><Tab> dd<S-o>
 imap ;; <Esc>
 vmap ;; <Esc>
+"buffer only
+nnoremap <leader>bo :call te#tools#buf_only('', '')<cr>
 vmap <F12> <C-c>j<S-v>zz 
 imap <leader>w (<Esc>lxea);
+nmap <leader>s <S-%>x<C-o>x 
 imap <leader>; <Esc><S-a>;<Esc>
-imap <leader>c <Esc>yi<<S-$>a</<Esc>pa><Esc><C-%>i<CR><Tab><CR><Esc>k
+imap <leader>c <Esc>yi<<S-$>a</<Esc>pa><Esc><C-%>i<CR><Tab><CR><Esc>k "copy tag
+map <F5> <Esc>:EnableFastPHPFolds<Cr>
+map <F6> <Esc>:EnablePHPFolds<Cr>
+map <F7> <Esc>:DisablePHPFolds<Cr> 
 "add the same close tab
-
+" Split management
+" nnoremap <silent> [b :bprevious<cr>
+" nnoremap <silent> ]b :bnext<cr>
+nmap <silent> <C-k> :exe "resize " . (winheight(0) * 3/2)<CR>
+nmap <silent> <C-j> :exe "resize " . (winheight(0) * 2/3)<CR>
+nmap <silent> <C-h> :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+nmap <silent> <C-l> :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 
 "machine autoritetparts.com.ua login ftpuser password pas
 "
@@ -157,9 +178,9 @@ call plug#end()
 "and :PlugInstall
 
 
-map <C-n> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
 
-map <F6> :setlocal spell! spelllang=en_us<CR>
+" map <F6> :setlocal spell! spelllang=en_us<CR>
 "inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 " autocmd FileType html inoremap ;1 <h1></h1><Enter><Enter><++><Esc>2kf<i
