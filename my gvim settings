@@ -143,7 +143,7 @@ vmap <F12> <C-c>j<S-v>zz
 imap <leader>w (<Esc>lxea);
 nmap <leader>s <S-%>x<C-o>x 
 imap <leader>; <Esc><S-a>;<Esc>
-imap <leader>c <Esc>yi<<S-$>a</<Esc>pa><Esc><C-%>i<CR><Tab><CR><Esc>k "copy tag
+imap <leader>c <Esc>yi<<S-$>a</<Esc>pa><Esc><C-%>i<CR><Tab><CR><Esc>k 
 map <F5> <Esc>:EnableFastPHPFolds<Cr>
 map <F6> <Esc>:EnablePHPFolds<Cr>
 map <F7> <Esc>:DisablePHPFolds<Cr> 
@@ -183,6 +183,7 @@ call plug#end()
 " map <F6> :setlocal spell! spelllang=en_us<CR>
 "inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+au BufRead *.html set filetype=htmlm4
 " autocmd FileType html inoremap ;1 <h1></h1><Enter><Enter><++><Esc>2kf<i
 " autocmd FileType html inoremap ;2 <h2></h2><Enter><Enter><++><Esc>2kf<i
 " autocmd FileType html inoremap ;3 <h3></h3><Enter><Enter><++><Esc>2kf<i
@@ -197,3 +198,4 @@ autocmd FileType html,php inoremap <Leader>' echo"</br>";
 "vim-airline - добавляет красоты
 "neocomplcache - автокомплит и мног очего ещё
 set nocp                    " 'compatible' is not set
+
