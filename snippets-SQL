@@ -32,8 +32,8 @@ UPDATE products_description SET products_name = TRIM(products_name) WHERE `produ
 
 // select unique value and his minimum id
 SELECT `model`, MIN(`id`) FROM `auto_cat` WHERE `mark` LIKE 'HYUNDAI' GROUP BY `model` HAVING count(*)>=1
-
-
+// select duplicated value (models) and its ids
+SELECT products_id, products_model from products WHERE products_model IN (SELECT `products_model` FROM products GROUP BY `products_model` HAVING COUNT(*) > 1) ORDER BY `products`.`products_model` DESC 
 
 
 // add PDO using method select
