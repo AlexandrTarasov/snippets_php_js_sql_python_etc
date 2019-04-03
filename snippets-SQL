@@ -30,6 +30,11 @@ UPDATE products_description SET products_name = TRIM(products_name) WHERE `produ
 // ----- adding string to the cell.
 // UPDATE products_description SET products_keywords = CONCAT( products_keywords,  'AUDI' ) WHERE  `products_id` =9621
 
+//passaround way ERROR 1093 (HY000): You can't specify target table
+UPDATE auto_cat SET status = 1 WHERE id IN (SELECT MIN(`id`) AS id FROM (
+         select * from auto_cat
+      ) as x WHERE `mark` LIKE 'BMW' GROUP BY `model`)
+
 // select unique value and his minimum id
 SELECT `model`, MIN(`id`) FROM `auto_cat` WHERE `mark` LIKE 'HYUNDAI' GROUP BY `model` HAVING count(*)>=1
 
