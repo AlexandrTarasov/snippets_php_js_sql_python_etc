@@ -1,0 +1,20 @@
+function clean(elements){
+	return elements.filter((el) => !isNaN(Number(el)))
+}
+
+function verify(elements){
+	elements.forEach((el) => {if (isNaN(Number(el)))  throw new Error("not a num")  } )
+  return elements;
+}
+
+function sum(){
+	return verify(Array.from(arguments)).reduce((a,b) => Number(a) + Number(b), 0)
+}
+
+document.write((sum(1,'')));
+document.write((sum()));
+document.write((sum()));
+
+document.write((sum('1', '1')));
+document.write((sum('aa', '1')));
+document.write((sum([],{}, '1', 55)));

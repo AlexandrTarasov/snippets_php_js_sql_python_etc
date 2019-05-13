@@ -1,0 +1,45 @@
+<button id="sortInitElem"> </button>
+<div id="list">
+    <div id="price1">443 usd</div>
+    <div id="price2">343 usd</div>
+    <div id="price3">511 usd</div>
+    <div id="price4">154 usd</div>
+    <div id="price5">234 usd</div>
+</div>
+<div id="for_debag"> </div>
+
+
+document.getElementById("sortInitElem").addEventListener("click", SortPriceDivs, false);
+var sort_meth = {
+  state: ""
+}
+
+function SortPriceDivs(){
+    var toSort = document.getElementById('list').children;
+    toSort = Array.prototype.slice.call(toSort, 0); 
+
+    
+    toSort.sort(function(a, b) {
+        var aord = +a.innerText.split(' ')[0];
+        var bord = +b.innerText.split(' ')[0];
+        if(sort_meth.state == ''){
+        	return (aord > bord) ? 1 : -1;
+        }else{  
+          return (aord <bord) ? 1 : -1; 
+        } 
+    });
+     if(sort_meth.state == ''){
+        	sort_meth.state = 'asc';
+     }else{  
+        	sort_meth.state = '';
+     }
+    
+		
+    document.getElementById('for_debag').innerText =  sort_meth.state;
+    var parent = document.getElementById('list');
+    parent.innerHTML = "";
+
+    for(var i = 0, l = toSort.length; i < l; i++) {
+        parent.appendChild(toSort[i]);
+    }
+}

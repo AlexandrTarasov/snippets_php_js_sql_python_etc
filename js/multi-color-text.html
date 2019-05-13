@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>multicolor text </title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+</head>
+	<style>
+/*new year addition */
+		.color0 {
+		  color:#72d000;
+		}
+		.color1 {
+		  color:red;
+		}
+		.color2 {
+		  color:blue;
+		}
+		.color3 {
+		  color:green;
+		}
+		.color4 {
+		  color:violet; 
+		}
+		.color5 {
+		  color:gray; 
+		}
+		.color6 {
+		  color:#ffaf37;
+		}
+		.color7 {
+		  color:#00fffa;
+		}
+		.color8 {
+		  color:#95eb86;
+		}
+		.color9 {
+		  color:#a7137a;
+		}
+		.color10{
+		  color:brown;
+		}	
+		.fadee{ transition: 950ms; }
+		.rade{font-weight: bold; }
+		.bolding{font-size:32px; transition: 350ms; font-weight: bold;}
+	/*end new year addition*/
+	</style>
+	<body style="padding: 0px;">
+		<div style="text-align: center; color: red; font-size: 18px; bottom-border:1px solid red;">
+				<div id="colortext">
+					<img style="height:70px;" src="http://autoritetparts.com.ua/images/left-toy-new-year.jpg">
+					<span id="w1" class="fadee color1">НОВОГОДНИЕ</span>
+					<span id="w2" class="fadee color2">СКИДКИ!</span>
+					<span id="w3" class="fadee color3">НА</span>
+					<span id="w4" class="fadee color4">ЛЮБОЙ</span>
+					<span id="w5" class="fadee color5">ЗАКАЗ</span>
+					<span id="w6" class="fadee color6">10%</span>
+					<img style="height:70px;" src="http://autoritetparts.com.ua/images/right-toy-new-year.jpg">
+				</div>
+		</div>
+	</body>
+<script>
+
+// script of new year rebate
+var wrapper = document.getElementById('colortext');
+
+var period = 2500;
+var w = getElems('colortext');
+var amount = 0;
+var option = 0;
+/* var classes_w = []; */
+
+/* console.log(); */
+function changeColor(variant) {
+	amount += 1;
+	
+	if(variant == 3){
+		w[5].classList.add('bolding');
+		setTimeout(function(){ w[5].classList.remove('bolding'); }, 700);
+	} 
+	else{
+		for (i in w){
+			let classes_w = []; 
+			classes_w = (w[i].className).split(' ');
+			if(variant == 2){
+				w[i].classList.remove(classes_w[0]);
+				w[i].classList.add('rade');
+			}
+
+			if(variant == 1){
+				w[i].classList.remove(classes_w[0]);
+				w[i].classList.add('fadee');
+			}
+			
+			w[i].classList.remove(classes_w[1]);
+			w[i].classList.add ('color'+(Math.floor(Math.random() * 11)));
+			if(i > 4)break;
+		}
+	}	
+
+	if(amount > 17)amount = 0;
+	if(amount > 15 && amount <17){
+		option = 3;
+		period = 1300;
+	
+	}
+	if(amount > 13 && amount < 15){
+		option = 1;
+		period = 2500;
+	}
+	if(amount > 3 && amount < 13){
+		option = 2;
+		period = 350;
+	}
+	if(amount <= 3){option = 0; period = 2500;}
+    setTimeout(changeColor, period, option);
+};
+
+changeColor();
+
+function getElems(el_id){
+	let span_list = document.getElementById(el_id).querySelectorAll(".fadee");
+	return span_list;
+}
+</script>
+</html>
