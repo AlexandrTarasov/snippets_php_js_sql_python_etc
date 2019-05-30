@@ -36,7 +36,7 @@ UPDATE auto_cat SET status = 1 WHERE id IN (SELECT MIN(`id`) AS id FROM (
       ) as x WHERE `mark` LIKE 'SUBARU' GROUP BY `model`)
 
 // select unique value and his minimum id
-SELECT `model`, MIN(`id`) FROM `auto_cat` WHERE `mark` LIKE 'HYUNDAI' GROUP BY `model` HAVING count(*)>=1
+SELECT `model`, MIN(`id`) AS id FROM `auto_cat` WHERE `mark` LIKE 'HYUNDAI' GROUP BY `model` HAVING count(*)>=1
 
 SELECT mark, id, status FROM `auto_cat` WHERE id IN(SELECT MIN(`id`) FROM `auto_cat` GROUP BY `mark` ) ORDER by mark
 
