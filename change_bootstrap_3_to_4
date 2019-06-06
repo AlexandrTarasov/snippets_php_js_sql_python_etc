@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Полиуретановые втукли и сайлентблоки на BMW 1 Series (E81)</title>
+	<meta name="description" content="Полиуретановые втукли и сайлентблоки на BMW 1 Series (E81), купить втулку из полиуретана, сайлентблок из полиуретана BMW Украина, Авторитет партс, цены">
+	<meta name="keywords" content="">
+	<link href="index_files/open-iconic-bootstrap.css" rel="stylesheet">
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384&#45;ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+	<link href="index_files/bootstrap.cs" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		.pointerdiv-add {
+				color: white; box-shadow-color: red; background: green; border: 1px solid #9f9f9f; border-radius: 8px; font-size: 15px; font-weight: 700; box-shadow: -1px 4px 4px 2px grey; background-color: #5fb78e; position: absolute; left:0; top:-25px;
+		}
+		.suspention-block{width:unset;float: left;height: 210px;padding: 0;margin: 2px;border: 1px solid #bebebe; width: 294px; overflow: auto;}
+		.model_select{ padding: 10px; border-radius: 5px; box-shadow: azure; background: #e8e8e8;color: #ae0101; font-size: 18px;}
+		.hidden {
+			display: none !important;
+			visibility: hidden !important;
+		}
+		.row div {
+		/* border-right: 1px solid #f6f6f6; */
+		}
+		#tooltip1{
+			display: none;
+		}
+		#appear{opacity:0.1; box-shadow: 0px -1px 13px 0px #F44336; transition:opacity 1s;}
+		.my {
+			margin: 5px;
+			width: 125px;
+			padding:0;
+		}
+		#resSearch {
+			max-width: 450px;
+			min-width: 262px;
+			margin-top: 2px;
+			border-radius: 3px;
+			border: 1px solid #bcbcbc;
+			background: rgba(255, 252, 239, 0.92);
+			position: absolute;
+			padding: 3px;
+			z-index: 11;
+		}
+			.part-pointer{background: rgba(255, 89, 10, 0.26); height: 25px;
+				width: 25px; position: absolute;
+				border-radius: 15px;
+				border: 1px solid #7e7e7e;
+				cursor:pointer;
+				}
+			.suspention-img{width:100%;}
+			a.nameblock {text-decoration: underline; color: #fff7d1;}
+			.pointer {cursor: pointer; border:1px solid #e2e2e2; display: inline-block; padding: 3px;}
+			.pointer:hover{background: #dfeafa;}
+			.toggle.btn {margin-bottom: 5px; }
+			.pointer-div-del{ position: absolute; top: -20px; right: 10px; background: lightpink; width: 20px; height: 20px; }
+			.del-title{top: -20px; position: absolute; left: -15px; color: black;}
+
+			.phone_div{display:none;}
+			label.btn-default.active{
+				color: #ececec;
+				background-color: #4a8c64;
+				border-color: #4a8c64;
+			}
+			.info-sto{
+				max-width: 150px; position: fixed; right: 10px; margin-top: 110px; z-index:10;
+			} 
+
+			/* span.btn{margin: 4px 12px;} */
+			.molelstyle{background: #b4fae5; margin: 3px;}
+			@media screen and (max-width: 1924px) {
+			.warning{border-color: rgb(255, 161, 161); padding:5px;}
+			}
+			@media screen and (max-width: 424px) {
+				.warning{max-width: 150px; position: fixed; right: 10px; z-index: 10;
+					border-color: rgb(255, 161, 161); padding:5px; top: 70px;
+				}
+				#logo_img{height:50px;}
+				#phones_ul{display:none;}
+				.phone_div{display:block;float:right;font-size: 18px;}
+				.suspention-block{
+					float: left; padding: 0; margin: 2px; border: 1px solid #bebebe; width: 294px; overflow: auto;height: 100%;
+				}
+			}
+	</style>
+	<link href="index_files/navbar.css" rel="stylesheet">
+	<link href="index_files/bootstrap-toggle.css" rel="stylesheet">
+	<body style="padding: 0px;">
+		<div class="container" id="firstelem">
+			<div class="alert alert-info info-sto" role="alert" style="padding:5px;">
+				<a href="http://autoritetparts.com.ua/extent-sto.html" class="alert-link"><span class="glyphicon glyphicon-wrench" aria-hidden="true" style="font-size: 25px; color: #747477;"></span><br>
+				СТО</a>
+			</div>
+
+			<div class="row">
+				<div class="col-md-3">
+					<a href="http://autoritetparts.com.ua/extent-poliuritan-catalog.html">
+						<img src="index_files/logo-ver-1-0.jpg" title="autoriter parts" id="logo_img" border="0">
+					</a>
+				</div>
+				<div class="col-md-4" style="margin-top: 20px; position: inherit; ">
+					<div class="row">
+						<div class="col-md-4">
+							<select class="form-control" style="display: initial; margin-bottom: 6px;" disabled="disabled" id="markaselect">
+								<option value="0" selected="selected">выберите авто</option>
+								<option value="AUDI">AUDI</option>
+								<option value="BMW">BMW</option>
+								<option value="BUGATTI">BUGATTI</option>
+								<option value="BYD">BYD</option>
+								<option value="CADILLAC">CADILLAC</option>
+								<option value="CHERY">CHERY</option>
+								<option value="CHEVROLET">CHEVROLET</option>
+								<option value="CITROEN">CITROEN</option>
+								<option value="DACIA">DACIA</option>
+								<option value="DAEWOO">DAEWOO</option>
+								<option value="DAF">DAF</option>
+								<option value="DODGE">DODGE</option>
+								<option value="FIAT">FIAT</option>
+								<option value="FORD">FORD</option>
+								<option value="GAZ">GAZ</option>
+								<option value="GEELY">GEELY</option>
+								<option value="GW">GW</option>
+								<option value="HONDA">HONDA</option>
+								<option value="HYUNDAI">HYUNDAI</option>
+								<option value="INFINITI">INFINITI</option>
+								<option value="ISUZU">ISUZU</option>
+								<option value="IVECO">IVECO</option>
+								<option value="JAGUAR">JAGUAR</option>
+								<option value="JEEP">JEEP</option>
+								<option value="KIA">KIA</option>
+								<option value="LADA">LADA</option>
+								<option value="LANCIA">LANCIA</option>
+								<option value="LAND ROVER">LAND ROVER</option>
+								<option value="LEXUS">LEXUS</option>
+								<option value="LIFAN">LIFAN</option>
+								<option value="MAZDA">MAZDA</option>
+								<option value="MERCEDES-BENZ">MERCEDES-BENZ</option>
+								<option value="MINI">MINI</option>
+								<option value="MITSUBISHI">MITSUBISHI</option>
+								<option value="NISSAN">NISSAN</option>
+								<option value="NOTHING">NOTHING</option>
+								<option value="OPEL">OPEL</option>
+								<option value="PEUGEOT">PEUGEOT</option>
+								<option value="PORSCHE">PORSCHE</option>
+								<option value="RENAULT">RENAULT</option>
+								<option value="SAAB">SAAB</option>
+								<option value="SEAT">SEAT</option>
+								<option value="SKODA">SKODA</option>
+								<option value="SMART">SMART</option>
+								<option value="SSANGYONG">SSANGYONG</option>
+								<option value="SUBARU">SUBARU</option>
+								<option value="SUZUKI">SUZUKI</option>
+								<option value="TOYOTA">TOYOTA</option>
+								<option value="VOLKSWAGEN">VOLKSWAGEN</option>
+								<option value="VOLVO">VOLVO</option>
+							</select><br>
+							<select class="form-control" disabled="disabled" id="modelselect">
+								<option value="0" selected="selected">-</option>
+							</select>
+						</div>
+						<div class="col-md-8">
+							ПОИСК: <div class="toggle btn btn-primary btn-sm" data-toggle="toggle" style="width: 106px; height: 30px;"><input id="toggle-event" type="checkbox" style="margin: 5px;" data-on="по OEN" data-off="по названию" data-size="small" checked="checked" data-toggle="toggle" value=""><div class="toggle-group"><label class="btn btn-primary btn-sm toggle-on">по OEN</label><label class="btn btn-default btn-sm active toggle-off">по названию</label><span class="toggle-handle btn btn-default btn-sm"></span></div></div>
+							<br>
+							<input type="text" id="search" class="form-control" placeholder="поиска детали">
+							<div id="resSearch"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3" style="margin-top:10px;">
+					<ul id="phones_ul">
+						<li style="font-size: 20px; list-style-type: none;">
+							<span class="glyphicon glyphicon-phone" aria-hidden="true"></span> (099) 371-31-91</li>
+						<li style="font-size: 20px; list-style-type: none;">
+							<img src="index_files/ico-viber.png" style="width: 22px;"> (067) 508-47-15</li>
+						<li style="font-size: 20px; list-style-type: none;">
+							<span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> (044) 353-89-86</li>
+					</ul>
+				</div>
+				<div class="col-md-2">
+					<button type="button" class="btn btn-light" data-target="#cartModal" data-toggle="modal">Корзина</button>
+				</div>
+			</div>
+			<!-- Static navbar -->
+			<div class="navbar navbar-default" role="navigation" style="margin-bottom: 5px;">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="" style="color: darkgoldenrod;">Полиуретан</a>
+					</div>
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="http://autoritetparts.com.ua/">Главная</a></li>
+							<li class="bg-danger" style="font-weight: bold;"><a href="http://autoritetparts.com.ua/rekomendacii-po-ustanovke-poliuretanovih-izdelii.html">Рекомендации и предупреждения</a></li>
+							<li><a href="http://autoritetparts.com.ua/poliuretan/">Полиуретан в ходовую</a></li>
+							<li><a href="http://autoritetparts.com.ua/index.php?route=information/information&amp;information_id=9">Доставка</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li class="active"><a href="http://autoritetparts.com.ua/index.php?route=information/information&amp;information_id=12">Контакты</a></li>
+							<li></li>
+						</ul>
+					</div><!--/.nav-collapse -->
+				</div><!--/.container-fluid -->
+			</div>
+			<div class="alert alert-warning warning" id="" role="alert" style="background-color:rgba(255, 252, 239, 0.72); text-align: center;">
+				<span style="color:red; font-weight: bold;">Внимание!</span> На сайте показаны не все позиции, которые есть в наличии, для уточнение звоните менеджеру.
+			</div>
+			<div id="main_conteiner">
+				<div>
+				</div>
+
+<div class="form-inline"><center><h1 style="font-size: 25px;">Полиуретановая ходовая BMW 1 Series (E81)</h1><center><a href="http://autoritetparts.com.ua/extent-poliuritan-catalog.html" class="btn btn-info btn-lg">
+			<span class="glyphicon glyphicon-home"></span> Каталог </a>
+			<span class="oi oi-caret-right"></span>
+			<button type="button" class="btn btn-default my">
+				<a href="http://autoritetparts.com.ua/extent-poliuritan-catalog.html?poliurit=BMW">
+					<img src="index_files/bmw.png" alt="">
+				</a>
+			<br>BMW</button>
+			<span class="oi oi-caret-right"></span>
+		
+		<select class="model_select" name="model_id" onchange="whenModelChoosen(this.value, this, 'BMW')"><option value="">выберите модель</option><option value="8094" selected="selected">1 Series (E81)</option><option value="8095">1 Series (E87)</option><option value="8088">1 Series (F20)</option><option value="8089">1 Series (F21)</option><option value="8207">1 Series 1M Coupe (E82)</option><option value="8131">1 Series Convertible (E88)</option><option value="8136">1 Series Coupe (E82)</option><option value="8205">1 Series M Coupe (E82)</option><option value="8209">1 Series M135 (F20)</option><option value="8210">1 Series M135 (F21)</option><option value="8213">1 Series M140</option><option value="8233">2 Series Active Tourer (F45)</option><option value="8224">2 Series Convertible (F23)</option><option value="8214">2 Series Coupe (F22)</option><option value="8222">2 Series Coupe (F23)</option><option value="8240">2 Series Gran Tourer (F46)</option><option value="8247">3 Series (E21)</option><option value="8250">3 Series (E30)</option><option value="8251">3 Series (E36)</option><option value="8261">3 Series (E46)</option><option value="8255">3 Series (E90)</option><option value="8452">3 Series (E90)(N52)</option><option value="8453">3 Series (E90)(N53)</option><option value="8256">3 Series (E91)</option><option value="8456">3 Series (E91)(N52/N53)</option><option value="8455">3 Series (E91)(N53)</option><option value="8303">3 Series (E92)</option><option value="8459">3 Series (E92)(N52)</option><option value="8458">3 Series (E92)(N53)</option><option value="8304">3 Series (E93)</option><option value="8449">3 Series (E93)(N52)</option><option value="8448">3 Series (E93)(N53)</option><option value="8257">3 Series (F30)</option><option value="8258">3 Series (F31)</option><option value="8663">3 Series ActiveHybrid 3 (F30)</option><option value="8362">3 Series Cabriolet (E46)</option><option value="8252">3 Series Compact (E36)</option><option value="8262">3 Series Compact (E46)</option><option value="8253">3 Series Coupe (E36)</option><option value="8254">3 Series Coupe (E46)</option><option value="8335">3 Series Estate (E30)</option><option value="8319">3 Series GT (F34)</option><option value="8360">3 Series Saloon (E46)</option><option value="8263">3 Series Touring (E46)</option><option value="8491">3 Series X (4WD) (E30)</option><option value="8492">3 Series X (4WD) (E46)</option><option value="8493">3 Series X (4WD) (E90)</option><option value="8494">3 Series X (4WD) (E91)</option><option value="8495">3 Series X (4WD) (E92)</option><option value="8639">3 Series X (4WD) (E92}</option><option value="8398">3 Series xDrive (E90)</option><option value="8400">3 Series xDrive (E91)</option><option value="8402">3 Series xDrive (E92)</option><option value="8395">3 Series xDrive (F30)</option><option value="8396">3 Series xDrive (F31)</option><option value="8397">3 Series xDrive GT (F34)</option><option value="8673">4 Series Convertible (F33)</option><option value="8664">4 Series Coupe (F32)</option><option value="8681">4 Series Gran Coupe (F36)</option><option value="8689">5 Series (E12)</option><option value="8692">5 Series (E28)</option><option value="8698">5 Series (E34)</option><option value="8705">5 Series (E39)</option><option value="8707">5 Series (E60)</option><option value="8708">5 Series (E61)</option><option value="8695">5 Series (F10)</option><option value="8696">5 Series (F11)</option><option value="8724">5 Series (G30)</option><option value="8725">5 Series (G31)</option><option value="8901">5 Series ActiveHybrid 5 (F10)</option><option value="8694">5 Series Estate (E34)</option><option value="8723">5 Series GT (F07)</option><option value="8693">5 Series Saloon (E34)</option><option value="8766">5 Series Touring (E34)</option><option value="8706">5 Series Touring (E39)</option><option value="8782">5 Series X (4WD) (E34)</option><option value="8783">5 Series X (4WD) (E60)</option><option value="8784">5 Series X (4WD) (E61)</option><option value="8788">5 Series xDrive (E60)</option><option value="8789">5 Series xDrive (E61) </option><option value="8864">5 Series xDrive (F10)</option><option value="8899">5 Series xDrive (F11)</option><option value="8900">5 Series xDrive (G30)</option><option value="8839">5 Series xDrive GT (F07)</option><option value="8902">6 Series (E24)</option><option value="8907">6 Series (E63)</option><option value="8909">6 Series (E64)</option><option value="8926">6 Series (F12)</option><option value="8927">6 Series (F13)</option><option value="8930">6 Series Gran Coupe (F06)</option><option value="9084">7 Sereis (E66)</option><option value="9088">7 Sereis (F02)</option><option value="8948">7 Series (E23)</option><option value="8959">7 Series (E32)</option><option value="8946">7 Series (E38)</option><option value="8963">7 Series (E65)</option><option value="8965">7 Series (E66)</option><option value="9038">7 Series (E67)</option><option value="8971">7 Series (F01)</option><option value="8972">7 Series (F02)</option><option value="9052">7 Series (F04)</option><option value="8945">7 Series (G11)</option><option value="8957">7 Series (G12)</option><option value="9097">7 Series ActiveHybrid 7 (F04)</option><option value="9031">7 Series xDrive (F01)</option><option value="9072">7 Series xDrive (F02)</option><option value="9079">7 Series xDrive (G11)</option><option value="9080">7 Series xDrive (G12)</option><option value="9099">8 Series (E31)</option><option value="9108">i3</option><option value="9109">i3 Range Extender</option><option value="9110">i8</option><option value="9161">M-Roadster/Coupe (Z3)</option><option value="9111">M1</option><option value="9112">M1 Procar</option><option value="9113">M2</option><option value="9114">M3</option><option value="9135">M4</option><option value="9137">M5</option><option value="9154">M6</option><option value="9160">M6 Gran Coupe</option><option value="9163">X1</option><option value="9187">X3</option><option value="9203">X4</option><option value="9210">X5</option><option value="9236">X5 M</option><option value="9240">X6</option><option value="9256">X6 M</option><option value="9260">Z1</option><option value="9264">Z3</option><option value="9273">Z4</option><option value="9295">Z8</option></select>
+		</center></center></div><br><div class="row "></div>
+		<div class="row well-sm" style="background:#eceaea; margin-bottom: 3px; ">
+		<div class="col-md-3 well-sm" style="font-size: 17px;">Наименование</div>
+		<div class="col-md-2 well-sm" style="font-size: 17px;">Фото</div>
+		<div class="col-md-4 well-sm" style="font-size: 17px;">Модели</div>
+		<div class="col-md-2 well-sm" style="font-size: 17px;">Код</div>
+		<div class="col-md-1 well-sm" style="font-size: 17px;">Заказ</div>
+		</div><div id="products_list"><div class="row well-sm" style="background:#eceaea;margin-bottom: 3px; "><div class="col-md-3 well-sm btn-primary " style="font-size: 17px;">Cайлентблок переднего рычага</div> <div class="col-md-2"><img style="width: 100px;" src="index_files/no_image.jpg"></div> <div class="col-md-4"> </div> <div class="col-md-2 prod-row" id="crosses1396"></div><div class="col-md-1"><button type="button" class="btn btn-success" style="background-color: #3d7f3d;" data-toggle="modal" data-text="1396 Cайлентблок переднего рычага на BMW" data-target="#myModal" onclick="Goid(1396)"> уточнить <br>Цену</button></div></div>
+<div class="row well-sm" style="background:#eceaea;margin-bottom: 3px; "><div class="col-md-3 well-sm btn-primary " style="font-size: 17px;">Втулка переднего стабилизатора</div> <div class="col-md-2"><img style="width: 100px;" src="index_files/no_image.jpg"></div> <div class="col-md-4"> </div> <div class="col-md-2 prod-row" id="crosses1397"></div><div class="col-md-1"><button type="button" class="btn btn-success" style="background-color: #3d7f3d;" data-toggle="modal" data-text="1397 Втулка переднего стабилизатора на BMW" data-target="#myModal" onclick="Goid(1397)"> уточнить <br>Цену</button></div></div>
+<div class="row well-sm" style="background:#eceaea;margin-bottom: 3px; "><div class="col-md-3 well-sm btn-primary " style="font-size: 17px;">Сайлентблок задний</div> <div class="col-md-2"><img style="width: 100px;" src="index_files/no_image.jpg"></div> <div class="col-md-4"> </div> <div class="col-md-2 prod-row" id="crosses1398"></div><div class="col-md-1"><button type="button" class="btn btn-success" style="background-color: #3d7f3d;" data-toggle="modal" data-text="1398 Сайлентблок задний на BMW" data-target="#myModal" onclick="Goid(1398)"> уточнить <br>Цену</button></div></div>
+</div>			</div>
+			<!-- Modal for order -->
+			<div id="myModal" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+					<form action="cat_poliurit_request.php" method="post">
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">×</button>
+								<h4 class="modal-title" style="color:#A12828;">ЗАКАЗ</h4>
+								<div id="result"># </div>
+							</div>
+							<div class="modal-body">
+
+								<h4>Укажите № телефон, мы перезвоним</h4>
+								<div class="input-group col-md-4">
+									<span class="input-group-addon">Тел:</span>
+									<input id="msg" type="text" class="form-control" name="tel" placeholder="0950000000">
+								</div>
+								<br>
+								<input id="crossinp" type="hidden" class="form-control" name="crosses" value="">
+								<input type="hidden" name="catalog-page" value="1">
+								<button type="submit" class="btn btn-info active">Отправить запрос</button>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div><!-- end modal for orders -->
+
+<!-- cart Modal -->
+<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">КОРЗИНА</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="container" style="border-bottom: 1px solid #3fa3a3;margin-bottom: 35px;">
+					<div class="row" style="background: beige; ">
+						<div class="col">Наименование</div>
+						<div class="col-2">Кл-во</div>
+						<div class="col-2">Цена</div>
+					</div>
+					<div class="row">
+						<div class="col">Пусто</div>
+						<div class="col-2">0</div>
+						<div class="col-2"> 000 €</div>
+					</div>
+				</div>
+				<form class="needs-validation" novalidate="">
+					<div class="form-row">
+						<div class="col-md-12 mb-3">
+							<input type="text" class="form-control" id="validationTooltip01" placeholder="Имя" required="">
+							<div class="valid-tooltip">
+								Всё хорошо!
+							</div>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="col-md-12 mb-3">
+							<label for="validationTooltip01">Телефон</label>
+							<input type="text" class="form-control" id="validationTooltip01" placeholder="" required="">
+							<div class="valid-tooltip">
+								Всё хорошо!
+							</div>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="col-md-12 mb-3">
+							<label for="validationTooltip03">Адрес доставки(Отделение НП)</label>
+							<input type="text" class="form-control" id="validationTooltip03" placeholder="" required="">
+							<div class="invalid-tooltip">
+								Пожалуйста введите адрес city.
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+				<button type="button" class="btn btn-primary">Оформить</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- cart Modal end  -->
+
+
+		</div>
+	
+
+
+	
+	<script src="index_files/jquery-3.js"></script>
+	<script src="index_files/bootstrap.js"></script>
+	<script src="index_files/bootstrap-toggle.js"></script>
+	<script type="text/javascript">
+		let click_count = 0;
+		var stateoftoggle = true;
+		let modelsquery = '';
+
+		function whenModelChoosen(model_id, sel, mark) {
+			let model_name = sel.options[sel.selectedIndex].text;
+			
+  			location.replace("/extent-poliuritan-catalog.html?poliurit="+mark+"&model_id="+model_id+"&model_name="+model_name);
+		}
+
+		$(function() {
+			$('#toggle-event').change(function() {
+				stateoftoggle = $(this).prop('checked');
+				document.getElementById('resSearch').innerHTML='';
+				if(stateoftoggle == false){ // searching by name of part
+					document.getElementById("markaselect").disabled = false;
+					document.getElementById("search").value = '';
+					document.getElementById("search").disabled = true;
+					document.getElementById("modelselect").innerHTML = "<option>-<option>";
+					}else{ // searching by OEN
+					document.getElementById("search").value = '';
+					document.getElementById("search").disabled = false;
+					document.getElementById("modelselect").innerHTML = "<option>-<option>";
+					document.getElementById("markaselect").disabled = true;
+					document.getElementById("markaselect").value = 0;
+					document.getElementById("modelselect").disabled = true;
+				}
+			});
+
+
+			$('#markaselect').change(function() {
+				if(document.getElementById("markaselect").value != 0){
+					document.getElementById("modelselect").disabled = false;
+					modelsquery = this.value;
+
+					$.ajax({
+						type: "POST",
+						url: "ajax/get_models_list.php?action=sf",
+						data: {"automarka": modelsquery},
+						cache: false,
+						success: function(response2){
+							$("#modelselect").html(response2);
+						}
+					});
+				}
+				else{
+					document.getElementById("modelselect").disabled = true;
+				}
+			});
+
+			$('#modelselect').change(function() {
+				document.getElementById("search").disabled = false;
+			});
+
+
+		});
+
+
+		$(document).ready(function(){  /*worning window show*/
+			let doc_widt = $(document).width();
+			if(doc_widt < 424 ){
+				$('.warning').html("<a>ВНИМАНИЕ</a>!");
+			}
+			if(click_count==0){
+				$(".warning").click(function() {
+					$(this).html("Если вы не нашли нужной вам позиции, позвоните менеджеру, т.к. в каталоге представленны не все позиции, которые есть в наличии! <span onClick=\"hidediv()\" class=\"glyphicon glyphicon-remove-circle\" aria-hidden=\"true\"></span>");
+					click_count = 1;
+				});
+			}
+
+
+		});
+
+		function hidediv() {	//alert(click_count);
+			//$('div.warning').remove();
+			$.ajax({
+					type: "GET",
+					url: "ajax/sessioChang.php",
+					data: {"tiptool": 'off'},
+					cache: false,
+					success:  function(response){
+						$(".alert").html(response);
+					}
+			});
+		};
+
+
+		$('#myModal').on('shown.bs.modal', function (event) {  /*modal window open*/
+			data = $( event.relatedTarget ).data( "text" );
+			$( "#result" ).html( data );
+			$( "#crossinp" ).attr( "value",data2 );
+		});
+
+		function Goid(id) {
+			data2 = $("#crosses"+id).text();
+			$( "#crossinp" ).attr( "value",data2 );
+		}
+
+		document.getElementById("search").oninput = function(){
+			if(stateoftoggle == false){
+
+				let searchphrase = document.getElementById("search").value;
+
+				if(searchphrase.length>1){
+					let div = document.getElementById("resSearch");
+					var re = new RegExp(this.value,'i'), text="";
+					for(var i = 0; i < arr.length; i++){
+						if(re.test(arr[i])) text+=arr[i]+"<br>";
+					}
+					div.innerHTML=text;
+					choosDiv(div);
+					strarray = this.value.split(' ');
+					if(strarray.length == 3){
+
+					}
+				}
+
+				arr=['<div class="pointer">сайлентблок передний</div>',
+				'<div class="pointer">сайлентблок задний</div>',
+				'<div class="pointer">втулка стабилизатора</div>',
+				'<div class="pointer">втулка рессоры</div>',
+				'<div class="pointer">подушка двигателя</div>',
+				'<div class="pointer">подушка кпп</div>',
+				'<div class="pointer">подушка балки</div>',
+				'<div class="pointer">опора амортизатора</div>',
+				'<div class="pointer">манжет</div>',
+				'<div class="pointer">пыльник шруса</div>'
+				];
+
+				function choosDiv(div){
+					var selectedDiv;
+					div.onclick = function(event) {
+						let target = event.target;
+						let phase =  target.textContent;
+						$("#main_conteiner").html("<center><img src=\"images/preloader2.gif\" /></center>");
+						setTimeout(backInInput, 1500, phase, div);
+						//backInInput(phase, div);
+					}
+				}
+				function backInInput(name, searchdiv){
+					document.getElementById("search").value = name;
+					let el = document.getElementById("search");
+					let selected_model = document.getElementById("modelselect").value;
+					el.focus();
+					searchdiv.innerHTML='';
+					$.ajax({
+						type: "GET",
+						url: "ajax/search.php?action=by_name",
+						data: {"search": name, "selmodel": selected_model},
+						cache: false,
+						success: function(response){
+							$("#main_conteiner").html(response);
+						}
+					});
+				}
+			}
+			else{
+				var search = $("#search").val();  //search if toggle on OEN searching
+				var box=$(this).val();
+				if(box.length >= 5)
+				{
+					$.ajax({
+						type: "GET",
+						url: "ajax/search.php?action=by_oen",
+						data: {"search": search},
+						cache: false,
+						success: function(response){
+							$("#resSearch").html(response);
+						}
+					});
+				}
+			}
+		}
+
+
+
+	var clicksCounter = 0;
+	var allBlocks = document.getElementsByClassName('suspention-block');
+	for (let ll = 0; ll < allBlocks.length; ll++) {
+			allBlocks[ll].addEventListener("click", function(e){
+            clicksCounter++;
+			x = e.target;
+			//parentNode = e.path[1];
+			parentDiv = x.parentNode;
+			let cod_from_src = parentDiv.lastElementChild.src.split(/(\\|\/)/g).pop();
+			cod_from_src = cod_from_src.slice(0, -4);
+			//console.log(parentNode.childElementCount);
+			cod_from_src = cod_from_src.split('_');
+			cod_from_src.shift();
+
+			for(let ind = 0; parentDiv.childElementCount > ind; ind++){
+				if(parentDiv.childNodes[ind] == x){
+					cod_from_src_main = cod_from_src[ind];
+					break;
+				}
+			}
+			//console.log(cod_from_src_main);
+			//cod_from_src = cod_from_src.join();
+
+			let parentDivList = '';
+			let parentDivItem = '';
+			let class_row_elem = [];
+
+			class_row_elem = document.getElementsByClassName("prod-row");
+
+			for(let z = 0; z < class_row_elem.length; z++){
+				let value_of_code_div = class_row_elem[z].innerText;
+
+				if(value_of_code_div.includes(cod_from_src_main)){
+					parentDivList =  document.getElementById('products_list');
+					parentDivItem =  class_row_elem[z].parentNode;
+					break;
+				}
+
+			}
+
+			if(parentDivItem != ''){ // if this product is on the page
+				var top_div_element = parentDivItem.cloneNode(true);
+				parentDivItem.remove(); // remove existing div of products list
+				parentDivList.insertBefore(top_div_element, parentDivList.firstChild);
+				top_div_element.setAttribute('id','appear'); //put new on the top
+                //if size of window
+
+                if(clicksCounter>1){top_div_element.nextSibling.style.boxShadow = "0px 0px 0px 0px";}
+                top_div_element.scrollIntoView({ behavior: 'smooth' });  // Top
+                setTimeout(function() {
+					top_div_element.style.opacity = '1';
+					top_div_element.style.boxShadow = "inset 0px -1px 13px 0px #5dd502";
+				}, 500);
+
+			}
+
+		});
+			//return false;
+	}
+
+	</script>
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript">
+		(function (d, w, c) {
+			(w[c] = w[c] || []).push(function() {
+				try {
+					w.yaCounter44519614 = new Ya.Metrika({
+						id:44519614,
+						clickmap:true,
+						trackLinks:true,
+						accurateTrackBounce:true,
+						webvisor:true
+					});
+				} catch(e) { }
+			});
+
+			var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+			s.type = "text/javascript";
+			s.async = true;
+			s.src = "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/watch.js";
+
+			if (w.opera == "[object Opera]") {
+				d.addEventListener("DOMContentLoaded", f, false);
+			} else { f(); }
+		})(document, window, "yandex_metrika_callbacks");
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/44519614" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
+
+	<script>
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-102784456-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+
+</body><!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script--></html>
