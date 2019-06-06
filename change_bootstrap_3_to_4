@@ -5,8 +5,8 @@
 	<meta name="description" content="Полиуретановые втукли и сайлентблоки на BMW 1 Series (E81), купить втулку из полиуретана, сайлентблок из полиуретана BMW Украина, Авторитет партс, цены">
 	<meta name="keywords" content="">
 	<link href="index_files/open-iconic-bootstrap.css" rel="stylesheet">
-	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384&#45;ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-	<link href="index_files/bootstrap.cs" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- <link href="index_files/bootstrap.css" rel="stylesheet"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
 		.pointerdiv-add {
@@ -180,31 +180,67 @@
 				</div>
 			</div>
 			<!-- Static navbar -->
-			<div class="navbar navbar-default" role="navigation" style="margin-bottom: 5px;">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="" style="color: darkgoldenrod;">Полиуретан</a>
-					</div>
-					<div class="navbar-collapse collapse">
-						<ul class="nav navbar-nav">
-							<li class="active"><a href="http://autoritetparts.com.ua/">Главная</a></li>
-							<li class="bg-danger" style="font-weight: bold;"><a href="http://autoritetparts.com.ua/rekomendacii-po-ustanovke-poliuretanovih-izdelii.html">Рекомендации и предупреждения</a></li>
-							<li><a href="http://autoritetparts.com.ua/poliuretan/">Полиуретан в ходовую</a></li>
-							<li><a href="http://autoritetparts.com.ua/index.php?route=information/information&amp;information_id=9">Доставка</a></li>
-						</ul>
-						<ul class="nav navbar-nav navbar-right">
-							<li class="active"><a href="http://autoritetparts.com.ua/index.php?route=information/information&amp;information_id=12">Контакты</a></li>
-							<li></li>
-						</ul>
-					</div><!--/.nav-collapse -->
-				</div><!--/.container-fluid -->
-			</div>
+			<!-- <div class="navbar navbar&#45;default" role="navigation" style="margin&#45;bottom: 5px;"> -->
+			<!-- 	<div class="container&#45;fluid"> -->
+			<!-- 		<div class="navbar&#45;header"> -->
+			<!-- 			<button type="button" class="navbar&#45;toggle" data&#45;toggle="collapse" data&#45;target=".navbar&#45;collapse"> -->
+			<!-- 				<span class="sr&#45;only">Toggle navigation</span> -->
+			<!-- 				<span class="icon&#45;bar"></span> -->
+			<!-- 				<span class="icon&#45;bar"></span> -->
+			<!-- 				<span class="icon&#45;bar"></span> -->
+			<!-- 			</button> -->
+			<!-- 			<a class="navbar&#45;brand" href="" style="color: darkgoldenrod;">Полиуретан</a> -->
+			<!-- 		</div> -->
+			<!-- 		<div class="navbar&#45;collapse collapse"> -->
+			<!-- 			<ul class="nav navbar&#45;nav"> -->
+			<!-- 				<li class="active"><a href="http://autoritetparts.com.ua/">Главная</a></li> -->
+			<!-- 				<li class="bg&#45;danger" style="font&#45;weight: bold;"><a href="http://autoritetparts.com.ua/rekomendacii&#45;po&#45;ustanovke&#45;poliuretanovih&#45;izdelii.html">Рекомендации и предупреждения</a></li> -->
+			<!-- 				<li><a href="http://autoritetparts.com.ua/poliuretan/">Полиуретан в ходовую</a></li> -->
+			<!-- 				<li><a href="http://autoritetparts.com.ua/index.php?route=information/information&#38;amp;information_id=9">Доставка</a></li> -->
+			<!-- 			</ul> -->
+			<!-- 			<ul class="nav navbar&#45;nav navbar&#45;right"> -->
+			<!-- 				<li class="active"><a href="http://autoritetparts.com.ua/index.php?route=information/information&#38;amp;information_id=12">Контакты</a></li> -->
+			<!-- 				<li></li> -->
+			<!-- 			</ul> -->
+			<!-- 		</div><!&#45;&#45;/.nav&#45;collapse &#45;&#45;> -->
+			<!-- 	</div><!&#45;&#45;/.container&#45;fluid &#45;&#45;> -->
+			<!-- </div> -->
+
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<a class="navbar-brand" href="/">Главная</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon">Рекомендации и предупреждения</span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="http://autoritetparts.com.ua/poliuretan/">Полиуретан в ходовую</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="http://autoritetparts.com.ua/index.php?route=information/information&#38;amp;information_id=9">Доставка</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="http://autoritetparts.com.ua/index.php?route=information/information&#38;amp;information_id=12">Контакты</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Статьи	
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="http://autoritetparts.com.ua/rekomendacii-po-ustanovke-poliuretanovih-izdelii.html">Рекомендации и предупреждения</a>
+								<a class="dropdown-item" href="#">Another action</a>
+
+							</div>
+						</li>
+
+					</ul>
+				</div>
+			</nav>
+
 			<div class="alert alert-warning warning" id="" role="alert" style="background-color:rgba(255, 252, 239, 0.72); text-align: center;">
 				<span style="color:red; font-weight: bold;">Внимание!</span> На сайте показаны не все позиции, которые есть в наличии, для уточнение звоните менеджеру.
 			</div>
@@ -330,11 +366,13 @@
 		</div>
 	
 
-
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	
-	<script src="index_files/jquery-3.js"></script>
-	<script src="index_files/bootstrap.js"></script>
-	<script src="index_files/bootstrap-toggle.js"></script>
+	<!-- <script src="index_files/jquery&#45;3.js"></script> -->
+	<!-- <script src="index_files/bootstrap.js"></script> -->
+	<!-- <script src="index_files/bootstrap&#45;toggle.js"></script> -->
 	<script type="text/javascript">
 		let click_count = 0;
 		var stateoftoggle = true;
@@ -615,4 +653,4 @@
 	</script>
 
 
-</body><!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script--></html>
+</body></html>
