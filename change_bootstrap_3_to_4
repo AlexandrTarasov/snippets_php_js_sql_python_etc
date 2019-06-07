@@ -174,7 +174,7 @@
 						<li style="font-size: 20px; list-style-type: none;">
 						<img src="http://autoritetparts.com.ua/img/ico-phone.png" style="width: 25px;">(099) 371-31-91</li>
 						<li style="font-size: 20px; list-style-type: none;">
-							<img src="index_files/ico-viber.png" style="width: 22px;"> (067) 508-47-15</li>
+							<img src="index_files/ico-viber.png" style="width: 22px;">(067) 508-47-15</li>
 						<li style="font-size: 20px; list-style-type: none;">
 						<img src="http://autoritetparts.com.ua/img/ico-phone.png" style="width: 25px;">(044) 353-89-86</li>
 					</ul>
@@ -376,7 +376,7 @@
 		}
 
 		$(function() {
-			$('#toggle-event').change(function() {
+			$('#customSwitch1').change(function() {
 				stateoftoggle = $(this).prop('checked');
 				document.getElementById('resSearch').innerHTML='';
 				if(stateoftoggle == false){ // searching by name of part
