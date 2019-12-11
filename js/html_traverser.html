@@ -41,7 +41,6 @@
 </html>
 
 <script>
-
 let uls = document.getElementsByTagName("ul")[0].children;
 let res = getAllTags(uls, [0, 0, 'ul']);
 console.log(res);
@@ -79,8 +78,4 @@ function getAllTags(items_list, c){  // c =level of depth
 		return [ c[0]-1, c[1], c[2] ];
 	}
 }
-
-
-
 </script>
-
