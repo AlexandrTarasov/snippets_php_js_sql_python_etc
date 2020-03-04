@@ -44,6 +44,9 @@ SELECT mark, id, status FROM `auto_cat` WHERE id IN(SELECT MIN(`id`) FROM `auto_
 SELECT products_id, products_model from products WHERE products_model IN (SELECT `products_model` FROM products GROUP BY `products_model` HAVING COUNT(*) > 1) ORDER BY `products`.`products_model` DESC 
 
 
+ALTER TABLE os_products AUTO_INCREMENT = 1 
+//reset autoincrement ids
+
 // add PDO using method select
 try{
   $pdo = new PDO('mysql:host=localhost;dbname=;charset=utf8','root','pass');
